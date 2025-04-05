@@ -30,8 +30,11 @@ jobs:
     - name: 🗃 Criar pasta do banco de dados
       run: mkdir -p bd
 
-    - name: 🧱 Inicializar banco SQLite com schema.sql
+    - name: 🧱 Criar banco de produção
       run: sqlite3 ./bd/esmforum.db < ./bd/schema.sql
+
+    - name: 🧪 Criar banco de testes
+      run: sqlite3 ./bd/esmforum-teste.db < ./bd/schema.sql
 
     - name: ✅ Rodar testes
       run: npm test

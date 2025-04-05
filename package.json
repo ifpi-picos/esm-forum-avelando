@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "jest",
     "test:unit": "jest testes/unidade",
     "test:int": "jest testes/integridade"
   },

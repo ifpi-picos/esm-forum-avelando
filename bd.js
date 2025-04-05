@@ -2,7 +2,7 @@ const bd = require('./bd/bd_utils');
 
 module.exports = {
   async recuperar_todas_perguntas() {
-    return bd.queryAll('SELECT * FROM perguntas ORDER BY id_pergunta DESC', []);
+    return bd.queryAll('SELECT * FROM perguntas ORDER BY id_pergunta ASC', []);
   },
 
   async recuperar_pergunta(id) {
