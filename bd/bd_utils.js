@@ -3,6 +3,7 @@ const Database = require('better-sqlite3');
 var bd = new Database('./bd/esmforum.db');
 
 function reconfig(nome) {
+  console.log('🧪 Usando banco:', nome);
   bd = new Database(nome);
 }
 
@@ -15,7 +16,7 @@ function queryAll(query, params) {
 }
 
 function exec(statement, params) {
-  bd.prepare(statement).run(params);
+  return bd.prepare(statement).run(params);
 }
 
 exports.reconfig = reconfig;
